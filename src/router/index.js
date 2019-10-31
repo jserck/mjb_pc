@@ -26,17 +26,16 @@ export default new Router({
             name: 'OPENTHESITE',
             component: routerComponents["OPENTHESITE"]['component']
         },
-        //地图可视化
+        //合同
         {
-            path: '/bmap/:id',
-            name: 'bmap',
-            component: routerComponents["BMAP"]['component']
+            path: '/contract',
+            name: 'CONTRACT',
+            component: routerComponents["CONTRACT"]['component']
         },
-        //try
         {
-            path: '/try',
-            name: 'try',
-            component: routerComponents["TRY"]['component']
+            path: '/discount',
+            name: 'DISCOUNT',
+            component: routerComponents["DISCOUNT"]['component']
         }
     ]
 })

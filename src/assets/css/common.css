@@ -18,6 +18,45 @@ html {
     background: #fff;
 }
 
+/*
+     解决因出现滚动条导致页面重新计算宽度而出现的抖动问题 START
+*/
+/* 删除滚动条 */
+/* body::-webkit-scrollbar {
+    display: none;
+} */
+
+html {
+
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+:root {
+
+    overflow-x: auto;
+
+    /* overflow-y: hidden; */
+}
+
+:root body {
+
+    position: absolute;
+
+}
+
+body {
+
+    width: 100vw;
+
+    /* overflow: hidden; */
+
+}
+
+/*
+     解决因出现滚动条导致页面重新计算宽度而出现的抖动问题  NED
+*/
 img {
     border: none;
     max-width: 100%;

@@ -16,3 +16,9 @@ export const TRY = {
 // export const PROJECTPARTICULARS = {
 //     component: () => import('@/components/openTheSite/children/projectParticulars/index')
 // };
+export const CONTRACT = {
+        component: () => import('@/components/DiscountAndContract/contract')
+};
+export const DISCOUNT = {
+component: () => import('@/components/DiscountAndContract/discount')
+};

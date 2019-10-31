@@ -71,7 +71,7 @@ export default {
                mjbprojectListData: [],
                theOverviewOfConstructionData: [],
                loading: false,
-               count: 1,
+               count: 2,
                tableIndex: 0
           }
      },
@@ -85,7 +85,7 @@ export default {
           repeat() {
                this.noMore = false;
                this.loading = false;
-               this.count = 1;
+               this.count = 2;
           },
           openLoading() {
                const loading = this.$loading({
@@ -197,7 +197,6 @@ export default {
           },
           getHttp(index) {
                console.log(index);
-
                /**
                * @name 获取数据
                * @method post

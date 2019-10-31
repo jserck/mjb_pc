@@ -1,10 +1,16 @@
 <template>
      <article class="m-projectListLi">
           <section class="g-projectListLi">
-               <div class="g-projectListLi-con" @click="fn_clickli1(obj1.type)">
+               <div
+                    class="g-projectListLi-con"
+                    @click.capture="fn_clickli1(obj1.type,$event)"
+                    @mousedown="fn_touchstart($event)"
+                    @mouseup="fn_touchend($event)"
+               >
                     <h2 class="u-title">{{obj1.title}}</h2>
                     <div
                          class="u-img"
+                         ref="clicks"
                          :style="`background:url(${imageUrl||imageList}) center center`"
                     >
                          <div class="g-noData" v-if="false"></div>
@@ -28,6 +34,12 @@ export default {
                }
           }
      },
+     data() {
+          return {
+               timerStart: 0,
+               timerEnd: 0
+          }
+     },
      computed: {
           imageUrl() {
                return ImgUrl(this.obj1.imageUrl);
@@ -37,8 +49,18 @@ export default {
           }
      },
      methods: {
-          fn_clickli1(type) {
-               this.$emit('fn_clickli', type);
+          fn_clickli1(type, e) {
+               if (this.timerEnd - this.timerStart == 0 || this.timerEnd - this.timerStart < 100) {
+                    this.$emit('fn_clickli', type);
+               } else {
+                    return;
+               }
+          },
+          fn_touchstart(e) {
+               this.timerStart = new Date().getTime();
+          },
+          fn_touchend(e) {
+               this.timerEnd = new Date().getTime();
           }
      }
 }

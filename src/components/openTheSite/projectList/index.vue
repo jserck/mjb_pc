@@ -2,16 +2,19 @@
      <article class="m-theOverviewOfConstruction">
           <!-- 列表 -->
           <section class="g-The-overview-of-list">
-               <ul
-                    class="displayFlex flexWrap flexAlignJustifyStart"
-                    :gutter="36"
-                    type="flex"
-                    justify="space-between"
-               >
-                    <li v-for="(item1,index) in obj1 " :key="index" :xl="6">
-                         <MjbProjectListLi @fn_clickli="fn_clickli2" :obj1="item1"></MjbProjectListLi>
-                    </li>
-               </ul>
+               <div v-if="obj1.length > 0">
+                    <ul
+                         class="displayFlex flexWrap flexAlignJustifyStart"
+                         :gutter="36"
+                         type="flex"
+                         justify="space-between"
+                    >
+                         <li v-for="(item1,index) in obj1 " :key="index" :xl="6">
+                              <MjbProjectListLi @fn_clickli="fn_clickli2" :obj1="item1"></MjbProjectListLi>
+                         </li>
+                    </ul>
+               </div>
+               <div v-else>暂无数据</div>
           </section>
      </article>
 </template>

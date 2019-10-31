@@ -2,11 +2,9 @@
      <article class="m-projectParticularsLi">
           <section class="g-projectParticularsLi">
                <div class="g-media">
-                    <div
-                         v-if="obj1.isVideo == 2"
-                         class="g-img"
-                         :style="`background:url(${imageUrl}) no-repeat center center`"
-                    ></div>
+                    <div v-if="obj1.isVideo == 2" class="g-img">
+                         <el-image style="width: 100%; height: 100%" :src="imageUrl" fit="fill"></el-image>
+                    </div>
                     <div v-else class="g-video">
                          <div
                               class="g-video-img"
@@ -75,7 +73,7 @@ export default {
           imageUrl() {
                return ImgUrl(this.obj1.imageUrl);
           },
-          videoPreImage(){
+          videoPreImage() {
                return ImgUrl(this.obj1.videoInfo.videoPreImage);
           }
      },
@@ -111,12 +109,18 @@ export default {
           box-shadow: 0px 0px 11px 0px rgba(169, 183, 197, 0.3);
           border-radius: 3px;
           .g-media {
+               position: relative;
                width: 100%;
                height: 348px;
                .g-img {
+                    // display: none;
+                    // position: absolute;
                     width: 100%;
                     height: 100%;
                     background-size: cover !important;
+                    img {
+                         width: 100%;
+                    }
                }
                .g-video {
                     position: relative;

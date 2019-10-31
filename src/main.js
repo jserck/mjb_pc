@@ -21,11 +21,23 @@ import {
     TabPane,
     Loading,
     InfiniteScroll,
-    Progress
+    Progress,
+    Image,
+    Input,
+    Form,
+    FormItem,
+    Button,
+    Select,
+    Option
 } from 'element-ui';
 
 //挂载全局
-Vue.use(Row)
+Vue.use(Option)
+Vue.use(Form)
+Vue.use(FormItem)
+Vue.use(Button)
+Vue.use(Select)
+Vue.use(Input)
 Vue.use(Col)
 Vue.use(Container)
 Vue.use(Header)
@@ -36,6 +48,7 @@ Vue.use(TabPane);
 Vue.use(Loading);
 Vue.use(InfiniteScroll);
 Vue.use(Progress);
+Vue.use(Image);
 //为vue实例添加自定义的全局属性
 Vue.prototype.$http = Axios;
 Vue.prototype.$url = url;
