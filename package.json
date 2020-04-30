@@ -14,7 +14,7 @@
     "echarts-extension-amap": "^1.0.0-rc.4",
     "element-ui": "^2.11.1",
     "fastclick": "^1.0.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "python": "0.0.4",
     "swiper": "^4.5.0",
     "vue": "^2.5.2",
